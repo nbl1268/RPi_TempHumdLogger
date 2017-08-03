@@ -1,0 +1,3 @@
+TempHumd
+ 	python /var/www/lab_app/lab_app.py
+	python /var/www/Myapp/MyApp.py

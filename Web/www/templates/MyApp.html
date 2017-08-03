@@ -1,0 +1,59 @@
+<html>
+  <meta charset="utf-8">
+  <title>MyApp</title>
+  <meta http-equiv="refresh" content="60">
+  <meta name="description" content="MyApp hosted on MyRPi">
+  <meta name="author" content="Neil Blanchard">
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <link rel="stylesheet" href="/static/css/skeleton.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/static/images/favicon.png">
+</head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="two-third column" style="margin-top: 5%">
+          <h2><U>Current Values</U></h2>
+          <TABLE>
+          <TR>
+            <TD>
+              <h1>Solar Output:</h1>
+              <h1>Solar Total:</h1>
+              <h1>Temperature:</h1>
+              <h1>Humidity:</h1>
+            </TD>
+            <TD>
+              <h1>{{solaroutput}} Watts</h1>
+              <h1>{{solartotal}} kWatts</h1>
+              <h1>{{"{0:0.1f}".format(temp) }}°C</h1>
+              <h1>{{"{0:0.1f}".format(hum)}}%</h1>
+            </TD>
+          </TR>
+          </TABLE>
+          <p>This page automatically refreshes every 60 seconds</p>
+          <p>This page was last updated: <span id="loadTime"></span></p>
+          <script>document.getElementById('loadTime').innerHTML = new Date().toLocaleString();</script>
+        </div>
+      </div>
+      <div class="row">
+      <div class="eleven columns">
+        <form id="range_select" action = "/lab_env_db" method="GET">  
+          <div class="one column">
+            <a href="/" style="position:relative;top:15px">Home</a>
+            <a href="/solartable" style="position:relative;top:15px">SolarTable</a>
+            <a href="/lab_env_db" style="position:relative;top:15px">Historic</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body> 
+</html>

@@ -1,0 +1,60 @@
+<html>
+  <meta charset="utf-8">
+  <title>MyApp Solar Table</title>
+  <meta http-equiv="refresh" content="60">
+  <meta name="description" content="MyApp hosted on MyRPi">
+  <meta name="author" content="Neil Blanchard">
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <link rel="stylesheet" href="/static/css/skeleton.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/static/images/favicon.png">
+</head>
+  <body>
+    <h2><U>Solar Table</U></h2>
+      <a href="/" style="position:relative;top:15px">Home</a>
+      <BR><BR><h3>
+      <script>
+        // Show table of data from table%
+        // record passed in contains
+        //   reading_datetime, 
+        //   heat_sink_temperature, 
+        //   panel_1_voltage, 
+        //   panel_1_dc_voltage, 
+        //   working_hours, 
+        //   line_current, 
+        //   line_voltage, 
+        //   ac_frequency, 
+        //   ac_power, 
+        //   accumulated_energy
+      
+      // show the arr_table data
+      </script>
+      
+      <table border="5">
+        <tr>
+        {% for row in label %}
+          <th align="center"> {{ row }}</th>
+        {% endfor %}
+        </tr>
+        {% for row in value %}
+          <tr>
+          {% for column in row %}
+             <td align="center"> {{ column }}</td>
+          {% endfor %}
+          </tr> 
+        {% endfor %}
+      </table>
+    </h3>
+    
+    <p>This page automatically refreshes every 60 seconds</p>
+  </body> 
+</html>
